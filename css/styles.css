@@ -1,0 +1,88 @@
+:root {
+  --main-background-color: #242b33;
+  --main-text-color: #d4c17f;
+  --secondary-text-color: #ffffff;
+}
+
+body {
+  background-color: var(--main-background-color);
+  color: var(--secondary-text-color);
+  font-family: Raleway, sans-serif;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.link:hover {
+  color: var(--main-text-color);
+}
+
+.list {
+  list-style: none;
+  color: var(--secondary-text-color);
+}
+
+.hero-title {
+  color: var(--main-text-color);
+  font-family: Playfair Display, serif;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.33;
+}
+
+.section-title {
+    color: var(--main-text-color);
+    font-family: Playfair Display, serif;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.33;
+}
+
+/* секція таблиц з прайсом */
+
+table caption {
+  text-align: left;
+}
+
+thead,
+tfoot {
+  text-align: left;
+
+  background-color: rgba(255, 255, 255, 0.1);
+
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.16;
+
+}
+
+table {
+  border-collapse: collapse;
+  width: 1100px;
+  height: 357px;
+
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.16;
+}
+
+table th,
+table td {
+  padding: 16px 17px 13px 23px;
+  border: 1px solid var(--secondary-text-color);
+}
+
+.footer-contact-mail__link {
+  color: var(--main-text-color);
+}
+
+.address {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.05em;
+    text-align: left;
+}
