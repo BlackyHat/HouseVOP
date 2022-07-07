@@ -96,20 +96,59 @@
         <h2 class="section-title">Наші квартири</h2>
         <ul class="flat-catalog list">
           <li class="flat-catalog-item">
-            <img src="./images/apartaments-foto-001.jpg" width="499" alt="Стандарт — 1 поверх" />
-            <p class="flat-catalog-item-label">Стандарт — 1 поверх</p>
+            <div class="product-thumb">
+
+              <img src="./images/apartaments-foto-001.jpg" width="520" alt="Стандарт — 1 поверх" />
+              <p class="flat-catalog-item-label">Стандарт — 1 поверх</p>
+              <p class="overlay">
+                Номери категорії Стандарт ідеально підходять для одномісного розміщення.
+                Середня площа номера від 17м² до 19,5м²
+                з одним великим ліжком (180x200см).
+                Вікна номерів виходять у двір і місто. Максимальне розміщення гостей в номері - 3.
+              </p>
+            </div>
           </li>
           <li class="flat-catalog-item">
-            <img src="./images/apartaments-foto-002.jpg" width="499" alt="Комфорт — 2 поверхи" />
-            <p class="flat-catalog-item-label">Комфорт — 2 поверхи</p>
+            <div class="product-thumb">
+
+              <img src="./images/apartaments-foto-002.jpg" width="520" alt="Комфорт — 2 поверхи" />
+              <p class="flat-catalog-item-label">Комфорт — 2 поверхи</p>
+              <p class="overlay">
+                Номери категорії Стандарт ідеально підходять для одномісного розміщення.
+                Середня площа номера від 17м² до 19,5м²
+                з одним великим ліжком (180x200см).
+                Вікна номерів виходять у двір і місто. Максимальне розміщення гостей в номері - 3.
+              </p>
+            </div>
+
           </li>
           <li class="flat-catalog-item">
-            <img src="./images/apartaments-foto-003.jpg" width="499" alt="Люкс — 3 поверхи" />
-            <p class="flat-catalog-item-label">Люкс — 3 поверхи</p>
+            <div class="product-thumb">
+
+              <img src="./images/apartaments-foto-003.jpg" width="520" alt="Люкс — 3 поверхи" />
+              <p class="flat-catalog-item-label">Люкс — 3 поверхи</p>
+              <p class="overlay">
+                Номери категорії Стандарт ідеально підходять для одномісного розміщення.
+                Середня площа номера від 17м² до 19,5м²
+                з одним великим ліжком (180x200см).
+                Вікна номерів виходять у двір і місто. Максимальне розміщення гостей в номері - 3.
+              </p>
+            </div>
+
           </li>
           <li class="flat-catalog-item">
-            <img src="./images/apartaments-foto-004.jpg" width="499" alt="Супер Люкс — 4 поверхи" />
-            <p class="flat-catalog-item-label">Супер Люкс — 4 поверхи</p>
+            <div class="product-thumb">
+
+              <img src="./images/apartaments-foto-004.jpg" width="520" alt="Супер Люкс — 4 поверхи" />
+              <p class="flat-catalog-item-label">Супер Люкс — 4 поверхи</p>
+              <p class="overlay">
+                Номери категорії Стандарт ідеально підходять для одномісного розміщення.
+                Середня площа номера від 17м² до 19,5м²
+                з одним великим ліжком (180x200см).
+                Вікна номерів виходять у двір і місто. Максимальне розміщення гостей в номері - 3.
+              </p>
+            </div>
+
           </li>
         </ul>
       </div>
@@ -173,18 +212,126 @@
             придумати щось
             нове - вже немає. Якщо у когось є ідея - завжди велкам!
           </p>
-          <form class="forms">
-            <label class="form__label">Введіть ім’я<input class="form__input" type="text" name="username" autofocus
-                placeholder="Іван" /></label>
+          <form class="forms" autocomplete="off">
+            <label class="form__label">
+              <div class="form__title"><span>Введіть ім’я </span><span class="form-title__accent">*</span></div><input
+                class="form__input" type="text" name="username" autofocus placeholder="Іван" />
+            </label>
 
-            <label class="form__label">Введіть e-mail *<input class="form__input" type="email" name="email"
-                placeholder="example@mail.com" /></label>
+            <label class="form__label">
+              <div class="form__title"><span></span>Введіть e-mail </span><span class="form-title__accent">*</span>
+              </div>
+              <input class="form__input" type="email" name="email" placeholder="example@mail.com" />
+            </label>
 
-            <label class="form__label">Введіть телефон<input class="form__input" type="tel" name="email"
-                placeholder="099 122 22 21" /></label>
+            <label class="form__label">
+              <div class="form__title"><span></span>Введіть телефон </span><span class="form-title__accent">*</span>
+              </div><input class="form__input" type="tel" name="email" placeholder="099 122 22 21" />
+            </label>
 
-            <button class="form__button" type="button">Подивитись район</button>
+            <button class="form__button" type="button" data-modal-open>Подивитись район</button>
           </form>
+
+          <!-- МОДАЛЬНЕ ВІКНО 1 -->
+          <div class="backdrop is-hidden" data-modal>
+            <div class="modal">
+              <button type="button" class="close-button" data-modal-close>
+                <svg class="close-icon" width="11" height="11">
+                  <use href="./images/icons.svg#icon-close"></use>
+                </svg>
+              </button>
+
+              <form role="group" class="modal-form" autocomplete="off">
+                <h2 class="modal-title">Хочете подивитися?</p>
+                  <fieldset class="modal-basic">
+                    <span class="modal-description">Контактна інформація</span>
+
+                    <label class="modal-form__label">
+                      <div class="modal-form__title"><span>Введіть ім’я </span><span
+                          class="modal-form-title__accent">*</span></div><input class="modal-form__input" type="text"
+                        name="username" autofocus placeholder="Іван" />
+                    </label>
+
+                    <label class="modal-form__label">
+                      <div class="modal-form__title"><span></span>Введіть e-mail </span><span
+                          class="modal-form-title__accent">*</span>
+                      </div>
+                      <input class="modal-form__input" type="email" name="email" placeholder="example@mail.com" />
+                    </label>
+
+                    <label class="modal-form__label">
+                      <div class="modal-form__title"><span></span>Введіть телефон </span><span
+                          class="modal-form-title__accent">*</span>
+                      </div><input class="modal-form__input" type="emeil" name="email" placeholder="099 122 22 21" />
+                    </label>
+                    <label class="modal-form__label">
+                      <div class="modal-form__title"><span></span>Введіть пароль</span><span
+                          class="modal-form-title__accent">*</span>
+                      </div><input class="modal-form__input" type="password" name="password" placeholder="*****" />
+                    </label>
+                  </fieldset>
+
+                  <fieldset class="modal-client-content">
+
+                    <span class="modal-description">Контактна інформація</span>
+
+                    <label class="modal-form__label">
+                      <div class="modal-form__title"><span>Введіть ім’я </span><span
+                          class="modal-form-title__accent">*</span></div><input class="modal-form__input" type="text"
+                        name="username" autofocus placeholder="Іван" />
+                    </label>
+
+                    <label class="modal-form__label">
+                      <div class="modal-form__title"><span></span>Введіть e-mail </span><span
+                          class="modal-form-title__accent">*</span>
+                      </div>
+                      <input class="modal-form__input" type="email" name="email" placeholder="example@mail.com" />
+                    </label>
+
+                    <label class="modal-form__label">
+                      <div class="modal-form__title"><span></span>Введіть телефон </span><span
+                          class="modal-form-title__accent">*</span>
+                      </div><input class="modal-form__input" type="emeil" name="email" placeholder="099 122 22 21" />
+                    </label>
+                    <label class="modal-form__label">
+                      <div class="modal-form__title"><span></span>Введіть пароль</span><span
+                          class="modal-form-title__accent">*</span>
+                      </div><input class="modal-form__input" type="password" name="password" placeholder="*****" />
+                    </label>
+
+                  </fieldset>
+
+
+                  <fieldset class="modal-additional">
+                    <div class="modal-form__feedback">
+                      <label class="modal-form__label">
+                        Введіть коментар
+
+                        <textarea class="modal-textarea__input" name="feedback" rows="5"
+                          placeholder="Моє побажання..."></textarea></label>
+                    </div>
+
+                    <label class="modal-label__agree" for="modal-label-agree">Соглашаюсь с
+                      рассылкой и принимаю <a class="modal-link link" href="#">Условия договора</a>
+                      <input type="checkbox" class="checkbox visually-hidden" name="modal-agree" id="modal-label-agree"
+                        required>
+                      <svg class="unchecked-icon" width="16" height="15">
+                        <use href="./images/icons.svg#icon-unchecked"></use>
+                      </svg>
+                      <svg class="checked-icon" width="16" height="15">
+                        <use href="./images/icons.svg#icon-checked"></use>
+                      </svg>
+                    </label>
+                  </fieldset>
+                  <button class="modal-form__button" type="button" data-modal-open>Подивитись район</button>
+                  <p class="modal-form__promo">* Ми нікому не передаємо ваші дані. І не зберігаємо ваш номер у базу.</p>
+
+
+              </form>
+            </div>
+          </div>
+
+
         </div>
       </div>
     </section>
@@ -216,21 +363,27 @@
     <section>
       <div class="container">
         <h2 class="section-title">Залишились питання?</h2>
-        <p>Ми нікому не передаємо ваші дані.І не зберігаємо ваш номер у базу.</p>
-        <ul class="questions-section list">
-          <li>
-            <form label="Ваше" action="" text="iii">Ваше ім’я</form>
-          </li>
-          <li>
-            <form action="">Ваш телефон</form>
-          </li>
-        </ul>
-        <button type="button">Подивитись район</button>
+        <form class="ask-form" autocomplete="off">
+          <p class="ask-form__meta">* Ми нікому не передаємо ваші дані. І не зберігаємо ваш номер у базу.</p>
+
+          <label class="ask-form__label">
+            <input class="ask-form__input" type="text" name="username" autofocus placeholder="Ваше ім’я" />
+          </label>
+
+          <label class="ask-form__label">
+            <input class="ask-form__input" type="tel" name="email" placeholder="Ваш телефон" />
+          </label>
+
+          <button class="ask-form__button" type="button">Подивитись район</button>
+        </form>
+
+
+
       </div>
     </section>
   </main>
   <!-- ФУТЕР -->
-  <footer>
+  <footer class="footer">
     <div class="container">
       <div class="footer-section">
         <div class="footer-logo">
@@ -276,6 +429,7 @@
       </div>
     </div>
   </footer>
+  <script src="./js/modal.js"></script>
 </body>
 
 </html>
