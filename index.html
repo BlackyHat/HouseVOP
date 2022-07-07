@@ -173,20 +173,18 @@
             придумати щось
             нове - вже немає. Якщо у когось є ідея - завжди велкам!
           </p>
-          <div class="forms">
-            <form>
-              <div role="group">
-                <label for="username">Введіть ім’я *</label>
-                <input type="text" name="username" id="username" autofocus placeholder="Іван" />
-                <label for="email">Введіть e-mail *</label>
-                <input type="email" name="email" id="email" placeholder="example@mail.com" />
-                <label for="tel">Введіть телефон</label>
-                <input type="tel" name="email" id="tel" placeholder="099 122 22 21" />
-                <button type="submit">Submit</button>
-              </div>
-            </form>
-            <button type="button">Подивитись район</button>
-          </div>
+          <form class="forms">
+            <label class="form__label">Введіть ім’я<input class="form__input" type="text" name="username" autofocus
+                placeholder="Іван" /></label>
+
+            <label class="form__label">Введіть e-mail *<input class="form__input" type="email" name="email"
+                placeholder="example@mail.com" /></label>
+
+            <label class="form__label">Введіть телефон<input class="form__input" type="tel" name="email"
+                placeholder="099 122 22 21" /></label>
+
+            <button class="form__button" type="button">Подивитись район</button>
+          </form>
         </div>
       </div>
     </section>

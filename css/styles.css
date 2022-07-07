@@ -376,7 +376,7 @@ body {
     #242b33 100%
   );
   opacity: 1;
-  transition: opacity 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: opacity 2000ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   width: 100%;
   height: 100%;
 }
@@ -419,6 +419,7 @@ table td {
 /* ask-to-action */
 
 .hightowers {
+  min-width: 1100px;
   background: linear-gradient(
       180deg,
       rgba(36, 43, 51, 1) 10.42%,
@@ -429,7 +430,7 @@ table td {
     linear-gradient(0deg, rgba(196, 196, 196, 0.6), rgba(196, 196, 196, 0.6)),
     url(../images/Rectangle.jpg);
 
-  background-position: top;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -443,25 +444,85 @@ table td {
 
 .hightowers-section {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
+  align-items: baseline;
+  justify-content: space-between;
 }
 
 .novobud-meta {
-  font-size: 16px;
-  line-height: calc(24 / 16);
+  width: 460px;
+  line-height: 1.5;
   text-align: left;
-  width: calc(100% / 2 - 50px);
+font-size: 16px;
+font-weight: 400;
+line-height: 1.5;
+Font size: 16px
 }
+
+/* FORM SECTION */
 
 .forms {
-  width: calc(100% / 2 - 50px);
+  width: 588px;
 
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  /* gap: 26px; */
+  /* margin-left: 50px; */
 }
+
+.form__label {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  margin-bottom: 20px;
+
+font-size: 16px;
+font-weight: 400;
+line-height: 1.5;
+Font size: 16px
+}
+
+.form__label:nth-child(2n + 1) {
+  margin-right: 20px;
+}
+
+.form__input {
+  padding: 11px 16px;
+  margin-top: 11px;
+  background-color: #565b60;
+  color: var(--secondary-text-color);
+  border: none;
+  outline: none;
+
+  font-size: 14px;
+  line-height: calc(27 / 14);
+}
+
+/* .form__label > span {
+  display: inline-block;
+  color: rgba(229, 45, 45, 1);
+}
+ */
+
+ .form__input::placeholder {
+  color: rgba(190, 190, 190, 1);
+ }
+ 
+.form__button {
+align-self: flex-start;
+
+  width: 282px;
+  height: 50px;
+  padding: 11px 23px;
+  margin-top: 34px;
+
+  background-color: var(--main-text-color);
+  color: var(--secondary-text-color);
+  line-height: calc(27 / 16);
+  font-weight: 700;
+  box-shadow: 0px 0px 2px 2px #d4c17f33;
+}
+
+/* VIDEO SECTION */
 
 .video-master {
   position: relative;
