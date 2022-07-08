@@ -89,6 +89,8 @@
           </li>
         </ul>
       </div>
+
+
     </section>
     <!-- КАТАЛОГ КВАРТИР -->
     <section id="catalog">
@@ -157,8 +159,8 @@
     <section>
       <div class="container">
         <h2 class="section-title">Ціни</h2>
-        <table>
-          <caption>
+        <table class="price-table">
+          <caption class="table-title">
             Каталог типів квартир за ціною
           </caption>
           <thead>
@@ -215,17 +217,17 @@
           <form class="forms" autocomplete="off">
             <label class="form__label">
               <div class="form__title"><span>Введіть ім’я </span><span class="form-title__accent">*</span></div><input
-                class="form__input" type="text" name="username" autofocus placeholder="Іван" />
+                class="form__input" type="text" name="username" placeholder="Іван" />
             </label>
 
             <label class="form__label">
-              <div class="form__title"><span></span>Введіть e-mail </span><span class="form-title__accent">*</span>
+              <div class="form__title"><span>Введіть e-mail </span><span class="form-title__accent">*</span>
               </div>
               <input class="form__input" type="email" name="email" placeholder="example@mail.com" />
             </label>
 
             <label class="form__label">
-              <div class="form__title"><span></span>Введіть телефон </span><span class="form-title__accent">*</span>
+              <div class="form__title"><span>Введіть телефон </span><span class="form-title__accent">*</span>
               </div><input class="form__input" type="tel" name="email" placeholder="099 122 22 21" />
             </label>
 
@@ -235,102 +237,107 @@
           <!-- МОДАЛЬНЕ ВІКНО 1 -->
           <div class="backdrop is-hidden" data-modal>
             <div class="modal">
-              <button type="button" class="close-button" data-modal-close>
-                <svg class="close-icon" width="11" height="11">
-                  <use href="./images/icons.svg#icon-close"></use>
-                </svg>
-              </button>
+              <div class="modalBodyWrapper">
 
-              <form role="group" class="modal-form" autocomplete="off">
-                <h2 class="modal-title">Хочете подивитися?</p>
-                  <fieldset class="modal-basic">
-                    <span class="modal-description">Контактна інформація</span>
+                <button type="button" class="close-button" data-modal-close>
+                  <svg class="close-icon" width="11" height="11">
+                    <use href="./images/icons.svg#icon-close"></use>
+                  </svg>
+                </button>
 
-                    <label class="modal-form__label">
-                      <div class="modal-form__title"><span>Введіть ім’я </span><span
-                          class="modal-form-title__accent">*</span></div><input class="modal-form__input" type="text"
-                        name="username" autofocus placeholder="Іван" />
-                    </label>
+                <form role="group" class="modal-form" autocomplete="off">
+                  <h2 class="modal-title">Хочете подивитися?</p>
+                    <div class="modal-basic">
+                      <span class="modal-description">Контактна інформація</span>
 
-                    <label class="modal-form__label">
-                      <div class="modal-form__title"><span></span>Введіть e-mail </span><span
-                          class="modal-form-title__accent">*</span>
-                      </div>
-                      <input class="modal-form__input" type="email" name="email" placeholder="example@mail.com" />
-                    </label>
-
-                    <label class="modal-form__label">
-                      <div class="modal-form__title"><span></span>Введіть телефон </span><span
-                          class="modal-form-title__accent">*</span>
-                      </div><input class="modal-form__input" type="emeil" name="email" placeholder="099 122 22 21" />
-                    </label>
-                    <label class="modal-form__label">
-                      <div class="modal-form__title"><span></span>Введіть пароль</span><span
-                          class="modal-form-title__accent">*</span>
-                      </div><input class="modal-form__input" type="password" name="password" placeholder="*****" />
-                    </label>
-                  </fieldset>
-
-                  <fieldset class="modal-client-content">
-
-                    <span class="modal-description">Контактна інформація</span>
-
-                    <label class="modal-form__label">
-                      <div class="modal-form__title"><span>Введіть ім’я </span><span
-                          class="modal-form-title__accent">*</span></div><input class="modal-form__input" type="text"
-                        name="username" autofocus placeholder="Іван" />
-                    </label>
-
-                    <label class="modal-form__label">
-                      <div class="modal-form__title"><span></span>Введіть e-mail </span><span
-                          class="modal-form-title__accent">*</span>
-                      </div>
-                      <input class="modal-form__input" type="email" name="email" placeholder="example@mail.com" />
-                    </label>
-
-                    <label class="modal-form__label">
-                      <div class="modal-form__title"><span></span>Введіть телефон </span><span
-                          class="modal-form-title__accent">*</span>
-                      </div><input class="modal-form__input" type="emeil" name="email" placeholder="099 122 22 21" />
-                    </label>
-                    <label class="modal-form__label">
-                      <div class="modal-form__title"><span></span>Введіть пароль</span><span
-                          class="modal-form-title__accent">*</span>
-                      </div><input class="modal-form__input" type="password" name="password" placeholder="*****" />
-                    </label>
-
-                  </fieldset>
-
-
-                  <fieldset class="modal-additional">
-                    <div class="modal-form__feedback">
                       <label class="modal-form__label">
-                        Введіть коментар
+                        <span class="modal-form__title">Введіть ім’я </span><span
+                          class="modal-form-title__accent">*</span><input class="modal-form__input" type="text"
+                          name="username" autofocus placeholder="Іван" />
+                      </label>
 
-                        <textarea class="modal-textarea__input" name="feedback" rows="5"
-                          placeholder="Моє побажання..."></textarea></label>
+                      <label class="modal-form__label">
+                        <span class="modal-form__title">Введіть e-mail </span><span
+                          class="modal-form-title__accent">*</span>
+                        <input class="modal-form__input" type="email" name="email" placeholder="example@mail.com" />
+                      </label>
+
+                      <label class="modal-form__label">
+                        <span class="modal-form__title">Введіть телефон </span>
+                        <input class="modal-form__input" type="emeil" name="email" placeholder="099 122 22 21" />
+                      </label>
+                      <label class="modal-form__label">
+                        <span class="modal-form__title">Введіть пароль</span>
+                        <input class="modal-form__input" type="password" name="password" placeholder="*****" />
+                      </label>
                     </div>
 
-                    <label class="modal-label__agree" for="modal-label-agree">Соглашаюсь с
-                      рассылкой и принимаю <a class="modal-link link" href="#">Условия договора</a>
-                      <input type="checkbox" class="checkbox visually-hidden" name="modal-agree" id="modal-label-agree"
-                        required>
-                      <svg class="unchecked-icon" width="16" height="15">
-                        <use href="./images/icons.svg#icon-unchecked"></use>
-                      </svg>
-                      <svg class="checked-icon" width="16" height="15">
-                        <use href="./images/icons.svg#icon-checked"></use>
-                      </svg>
-                    </label>
-                  </fieldset>
-                  <button class="modal-form__button" type="button" data-modal-open>Подивитись район</button>
-                  <p class="modal-form__promo">* Ми нікому не передаємо ваші дані. І не зберігаємо ваш номер у базу.</p>
+                    <div class="modal-client-content">
+
+                      <span class="modal-description">Інформація про квартиру</span>
+
+                      <label class="modal-form__label" for="flat-type">
+                        <span class="modal-form__title">Оберіть тип квартири </span>
+                        <span class="modal-form-title__accent"> *</span></label>
+                      <div class="select">
+                        <select name="flat-type" id="flat-type" class="modal-form__input flat-type"
+                          name="flat-type-list">
+                          <option class="flat-option" value="standart">Стандарт - 1 поверх</option>
+                          <option class="flat-option" value="komfort">Комфорт - 2 поверхи</option>
+                          <option class="flat-option" value="lux" selected>Люкс - 3 поверхи</option>
+                          <option class="flat-option" value="super-lux">Супер Люкс - 4 поверхи</option>
+                        </select>
+                      </div>
+                      <label class="modal-form__label ranger-label" for="range-loyalty">
+                        <span class="modal-form__title">Наскільки вам зручне містознаходження?</span>
+                        <input class="slider" id="range-loyalty" type="range" name="loyalty" min="1" max="10"
+                          step="1" />
+                        <span class="range-label-start">1</span><span class="range-label-end">10</span>
+                      </label>
+                      <label class="modal-form__label">
+                        <span class="modal-form__title">На який термін плануєте купувати житло?
+                          (від 1 до 100 років)</span>
+                        <input class="modal-form__input" type="text" name="years" placeholder="10" />
+                      </label>
+
+                      <label class="modal-form__label">
+                        <span class="modal-form__title">Оберіть дату і час перегляду квартири </span><span
+                          class="modal-form-title__accent">*</span>
+                        <input class="modal-form__input" type="datetime-local" name="date" min="2022-07-08T10:00"
+                          max="2023-12-03T17:00" />
+                      </label>
 
 
-              </form>
+
+                      <div class="modal-form__feedback">
+                        <span class="modal-description">Додаткова інформація</span>
+                        <label class="modal-form__label">
+                          Введіть коментар
+
+                          <textarea class="modal-textarea__input" name="feedback" rows="5"
+                            placeholder="Моє побажання..."></textarea></label>
+                      </div>
+
+                      <label class="modal-label__agree" for="modal-label-agree">Я згоден з правами використання
+                        введених
+                        особистих даних.
+                        <input type="checkbox" class="checkbox visually-hidden" name="modal-agree"
+                          id="modal-label-agree" required>
+                        <span class="unchecked-icon" width="20" height="15"></span>
+                        <span class="checked-icon" width="20" height="15"> <svg class="checked-bird" width="22"
+                            height="17">
+                            <use href="./images/icons.svg#icon-checked"></use>
+                          </svg></span>
+
+
+                      </label>
+                      <button class="modal-form__button" type="button">Подивитись район</button>
+                      <p class="modal-form__promo">Ми нікому не передаємо ваші дані. І не зберігаємо ваш номер у базу.
+                      </p>
+                </form>
+              </div>
             </div>
           </div>
-
 
         </div>
       </div>
@@ -346,7 +353,7 @@
       </div>
     </section>
     <!-- СЕКЦІЯ З КАРТОЮ -->
-    <section class="section-map">
+    <section class="section-map" id="district">
       <div class="container">
 
         <h2 class="section-title">Район на мапі</h2>
@@ -374,11 +381,8 @@
             <input class="ask-form__input" type="tel" name="email" placeholder="Ваш телефон" />
           </label>
 
-          <button class="ask-form__button" type="button">Подивитись район</button>
+          <button class="ask-form__button" type="button" data-modal-open>Подивитись район</button>
         </form>
-
-
-
       </div>
     </section>
   </main>

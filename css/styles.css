@@ -4,6 +4,10 @@
   --secondary-text-color: #ffffff;
 
   --bg-footer-color: rgba(50, 90, 50, 0.6);
+
+  --bg-color-for-hero-mouse: rgba(65, 65, 65, 0.8);
+  --bg-color-for-hero-mouse-start: rgba(56, 56, 55, 0.6);
+  --overlay-bg: rgba(36, 43, 51, 1);
 }
 
 .list {
@@ -43,7 +47,6 @@ img {
 }
 
 body {
-  /* background-color: var(--main-background-color); */
   background: linear-gradient(
     var(--main-background-color),
     hsl(230, 13%, 9%),
@@ -86,13 +89,13 @@ body {
   font-size: 14px;
 }
 
+.page-nav-item:hover {
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
 .fix-list {
   display: none;
 }
-
-/* .flat-list:hover {
-  display: inline-block;
-} */
 
 .hero-section {
   position: relative;
@@ -143,7 +146,7 @@ body {
   align-items: center;
 
   color: var(--main-text-color);
-  background-color: var(--bg-footer-color);
+  background-color: var(--bg-color-for-hero-mouse-start);
   border-radius: 50%;
   width: 55px;
   height: 55px;
@@ -164,8 +167,8 @@ body {
 }
 
 .hero-button-mouse:hover {
-  transform: scale(1.5) translate(-50%, -50%);
-  background-color: rgb(234, 0, 255);
+  transform: scale(1.3) translate(-50%, -50%);
+  background-color: var(--bg-color-for-hero-mouse);
 }
 
 .contact-address {
@@ -173,8 +176,6 @@ body {
   justify-content: space-evenly;
   align-items: center;
   margin-top: 150px;
-  /* bottom: 74px;
-  right: 50%; */
 }
 
 /* налаштування анімації для маркера адреси */
@@ -366,7 +367,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(36, 43, 51, 1);
+  background-color: var(--overlay-bg);
   transition-property: transform, background-color, opacity;
   transition-duration: 500ms;
   transition-timing-function: cubic-bezier(0.2, 0, 0.84, 1);
@@ -416,6 +417,25 @@ body {
   );
   width: 100%;
   height: 100%;
+}
+
+.price-table td:hover {
+  background: rgba(86, 91, 96, 0.7);
+  color: var(--main-text-color);
+}
+.price-table td:hover:after {
+  content: '';
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  border: 3px solid var(--main-text-color);
+  cursor: pointer;
+}
+
+.table-title {
+  margin-bottom: 22px;
 }
 
 table caption {
@@ -529,12 +549,6 @@ table td {
   transition: border-radius, border 500ms linear;
 }
 
-/* .form__label > span {
-  display: inline-block;
-  color: rgba(229, 45, 45, 1);
-}
- */
-
 .form__input:not(:placeholder-shown) {
   border: 2px solid #a7903e;
   border-radius: 8px;
@@ -548,9 +562,9 @@ table td {
   align-self: flex-start;
 
   width: 282px;
-  height: 50px;
+  height: 53px;
   padding: 11px 23px;
-  margin-top: 34px;
+  margin-top: 36px;
 
   background-color: var(--main-text-color);
   color: var(--secondary-text-color);
@@ -594,19 +608,38 @@ table td {
 }
 
 .modal {
-  padding: 40px 50px;
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
+  z-index: 50;
+
   transform: translate(-50%, -50%) scale(1, 1);
   transition: transform 500ms ease-in-out;
 
   width: 540px;
-  min-height: 1460px;
-  overflow: hidden;
+  max-width: 100%;
+  height: 90vh;
+  overflow: hidden scroll;
   background-color: rgba(36, 43, 51, 1);
   border-radius: 4px;
   box-shadow: 0px 0px 6px 6px rgba(255, 255, 255, 0.25);
+}
+
+.modalBodyWrapper {
+  padding: 40px 50px;
+
+  width: 100%;
+  height: 75hv;
+  overflow: hidden scroll;
+}
+
+.modal::-webkit-scrollbar {
+  width: 0px;
+  background-color: transparent;
+}
+.modalBodyWrapper::-webkit-scrollbar {
+  width: 0px;
+  background-color: transparent;
 }
 
 .close-button {
@@ -617,30 +650,28 @@ table td {
   right: 8px;
   padding: 10px 10px;
   border-radius: 50%;
-
-  background-color: inherit;
-
+  border: 2px solid #565b60;
+  color: rgba(231, 231, 231, 1);
+  background-color: rgba(36, 43, 51, 1);
+  outline: none;
   cursor: pointer;
 }
 
 .close-icon {
   fill: currentColor;
-
+  color: rgba(231, 231, 231, 1);
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.modal-basic,
-.modal-client-content,
-.modal-additional {
-  border: none;
-  margin: 0;
-}
-
 .modal-form {
   width: 100%;
+}
+
+.modal-form:not(:last-child) {
+  margin-bottom: 38px;
 }
 
 .modal-title {
@@ -649,33 +680,38 @@ table td {
 
 .modal-description {
   display: inline-block;
-  margin-bottom: 16px;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.5;
+  color: #e7e7e7;
+  font-family: Raleway, sans-serif;
+  margin-bottom: 16px;
 }
 
 .modal-form__label,
 .modal-form__feedback,
 .modal-label__agree {
+  display: block;
   color: rgba(231, 231, 231, 1);
-  font-size: 16px;
+  font-family: Raleway, sans-serif;
+  font-size: 13px;
   font-weight: 400;
   line-height: 1.5;
 }
 
 .modal-form__title {
-  margin-bottom: 11px;
+  display: inline-block;
+  margin-bottom: 9px;
 }
 
 .modal-form-title__accent {
   color: rgba(229, 45, 45, 1);
+  padding-left: 5px;
 }
-
 .modal-form__input,
 .modal-textarea__input {
   width: 100%;
-  margin-bottom: 26px;
+  margin-bottom: 24px;
 
   padding: 11px 20px;
   background-color: #565b60;
@@ -688,8 +724,90 @@ table td {
   transition: border-radius, border 500ms linear;
 }
 
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 12px;
+  padding: 0;
+  margin-bottom: 24px;
+  background-color: #565b60;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+
+  cursor: pointer;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: var(--main-text-color);
+  border-radius: 50%;
+
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: var(--main-text-color);
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.ranger-label {
+  position: relative;
+}
+
+.range-label-start {
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+}
+
+.range-label-end {
+  position: absolute;
+  bottom: 8px;
+  right: 0;
+}
+/* ВИПАДАЮЧИЙ СПИСОК  */
+
+.select {
+  position: relative;
+  background-color: #565b60;
+}
+
+.select select {
+  display: block;
+  appearance: none; /* убираем дефолнтные стрелочки */
+  background: url('../images/close.svg') no-repeat #565b60;
+  background-position: right 19px top 24px;
+  cursor: pointer;
+}
+
+.flat-option,
+.flat-type {
+  font-family: Raleway, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #bebebe;
+}
+
 .modal-textarea__input {
   resize: none;
+}
+
+.unchecked-icon {
+  background-color: rgba(86, 91, 96, 1);
+  border: none;
+  border-radius: 2px;
 }
 
 /* .form__label > span {
@@ -708,17 +826,60 @@ table td {
   color: rgba(190, 190, 190, 1);
 }
 
-.modal-form__button {
-  align-self: flex-start;
+.modal-label__agree {
+  position: relative;
+  padding-left: 30px;
+}
 
+.unchecked-icon {
+  position: absolute;
+
+  transform: translateY(-50%);
+  top: 50%;
+  left: 0;
+  opacity: 1;
+
+  width: 20px;
+  height: 15px;
+
+  background-color: rgba(86, 91, 96, 1);
+  border-radius: 2px;
+}
+
+.checked-icon {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: scale(0.8) translateY(-50%);
+  opacity: 0;
+  width: 20px;
+  height: 15px;
+  background-color: #fff;
+
+  border-radius: 2px;
+
+  transition-property: opacity, transform;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.checkbox:checked ~ .checked-icon {
+  opacity: 1;
+  transform: scale(1) translateY(-50%);
+}
+
+.modal-form__button {
   width: 100%;
   height: 50px;
   padding: 11px 23px;
   margin-top: 34px;
+  margin-bottom: 16px;
 
   background-color: var(--main-text-color);
   color: var(--secondary-text-color);
+
   line-height: calc(27 / 16);
+  font-size: 16px;
   font-weight: 700;
   box-shadow: 0px 0px 2px 2px #d4c17f33;
   transition-property: background-color, box-shadow;
@@ -730,33 +891,14 @@ table td {
   background-color: #a7903e;
   box-shadow: 2px 2px 0px 0px #d4c17f33;
 }
-
-/* VIDEO SECTION */
-
-.video-master {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.video {
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.video-master::before {
-  position: absolute;
-  content: '';
-  background-image: url(../images/play-button.svg);
-  transform: scale(1) rotate(0deg);
-  transition: transform 2000ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  width: 100px;
-  height: 100px;
-}
-
-.video-master:hover::before {
-  transform: scale(2) rotate(-360deg);
+.modal-form__promo {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: calc(16 / 13);
+  font-family: Raleway, sans-serif;
+  font-style: italic;
+  color: #e7e7e7;
 }
 
 /* SECTION QUESTIONS */

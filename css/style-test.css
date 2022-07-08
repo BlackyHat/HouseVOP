@@ -1,27 +1,189 @@
-body {
-    margin: 0;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .box {
-    width: 200px;
-    height: 200px;
-    border-radius: 10px;
-    background-color: tomato;
-    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
-      0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
-  
-    /*  We set the transition values.  */
-    transition: background-color 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275), transform 500ms ease-in-out 500ms;
-    cursor: pointer;
-  }
-  
-  .box:hover {
-    background-color: teal;
-    transform: rotate(360deg);
-    transition-duration: 5s;
-    animation-duration: 5s;
-  }
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 40;
+
+  width: 100%;
+  height: 100%;
+  background-color: rgba(36, 43, 51, 0.6);
+  opacity: 1;
+  transition: opacity;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.8, 0.8);
+}
+
+.modal {
+  padding: 40px 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1, 1);
+  transition: transform 500ms ease-in-out;
+
+  width: 540px;
+  min-height: 1460px;
+  overflow: hidden;
+  background-color: rgba(36, 43, 51, 1);
+  border-radius: 4px;
+  box-shadow: 0px 0px 6px 6px rgba(255, 255, 255, 0.25);
+}
+
+.close-button {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 10px 10px;
+  border-radius: 50%;
+
+  background-color: inherit;
+
+  cursor: pointer;
+}
+
+.close-icon {
+  fill: currentColor;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal-basic,
+.modal-client-content,
+.modal-additional {
+  border: none;
+  margin: 0;
+}
+
+.modal-form {
+  width: 100%;
+}
+
+.modal-title {
+  margin-bottom: 33px;
+}
+
+.modal-description {
+  display: inline-block;
+  margin-bottom: 16px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.modal-form__label,
+.modal-form__feedback,
+.modal-label__agree {
+  color: rgba(231, 231, 231, 1);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.modal-form__title {
+  margin-bottom: 11px;
+}
+
+.modal-form-title__accent {
+  color: rgba(229, 45, 45, 1);
+}
+
+.modal-form__input,
+.modal-textarea__input {
+  width: 100%;
+  margin-bottom: 26px;
+
+  padding: 11px 20px;
+  background-color: #565b60;
+  color: var(--secondary-text-color);
+  border: 2px solid transparent;
+  outline: none;
+
+  font-size: 14px;
+  line-height: calc(27 / 14);
+  transition: border-radius, border 500ms linear;
+}
+
+.modal-textarea__input {
+  resize: none;
+}
+
+/* .form__label > span {
+  display: inline-block;
+  color: rgba(229, 45, 45, 1);
+}
+ */
+
+.form__input:not(:placeholder-shown) {
+  border: 2px solid #a7903e;
+  border-radius: 8px;
+}
+
+.modal-form__input::placeholder,
+.modal-textarea__input::placeholder {
+  color: rgba(190, 190, 190, 1);
+}
+
+.modal-form__button {
+  align-self: flex-start;
+
+  width: 100%;
+  height: 50px;
+  padding: 11px 23px;
+  margin-top: 34px;
+
+  background-color: var(--main-text-color);
+  color: var(--secondary-text-color);
+  line-height: calc(27 / 16);
+  font-weight: 700;
+  box-shadow: 0px 0px 2px 2px #d4c17f33;
+  transition-property: background-color, box-shadow;
+  transition-duration: 2000ms;
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.modal-form__button:hover {
+  background-color: #a7903e;
+  box-shadow: 2px 2px 0px 0px #d4c17f33;
+}
+
+/* VIDEO SECTION */
+
+.video-master {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.video-master::before {
+  position: absolute;
+  content: '';
+  background-image: url(../images/play-button.svg);
+  transform: scale(1) rotate(0deg);
+  transition: transform 2000ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  width: 100px;
+  height: 100px;
+}
+
+.video-master:hover::before {
+  transform: scale(2) rotate(-360deg);
+}
